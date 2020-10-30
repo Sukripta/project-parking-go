@@ -1,0 +1,43 @@
+<app-loader></app-loader>
+    <div class="main-container">
+        <app-router></app-router>
+        <div class="image">
+            <div id="image-one" class="w3-container w3-center w3-animate-left">
+                <button mat-button (click)="openHelpDialog()" class="btn-one">Help&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></button>
+            </div>
+            <div id="quote" class="w3-container w3-center w3-animate-opacity">
+                <p>Parking Go makes the job easy for you, by allowing you to book spots directly from your phone.</p>
+            </div>
+            <div id="image-two" class="w3-container w3-center w3-animate-right">
+                <button mat-button (click)="openContactDialog()" class="btn-one">Contact Us&nbsp;<i class="fa fa-address-book" aria-hidden="true"></i></button>
+            </div>
+            
+        </div>
+        <div class="one">
+            
+            <div id="search">
+                <a><img id="search-img" src="{{searchUrl}}"></a>
+                <div class="parent">
+                    <p id="detail">SEARCH&nbsp;<i class="fa fa-search"></i></p>
+                    <div class="child">
+                        <hr id="hr">
+                    </div>
+                    <p id="info">Click on the icon above to search for Parking</p>
+                </div>
+            </div>
+        </div>
+        <div class="two">
+            <div id="search">
+                <a routerLink="/dashboard/register"><img id="search-img" src="{{registerUrl}}"></a>
+                <div class="parent">
+                    <p id="detail">REGISTER&nbsp;<i class="fa fa-user-plus"></i></p>
+                    <div class="child">
+                        <hr id="hr">
+                    </div>
+                    <p id="info">Click on the icon above to register for a Spot</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    

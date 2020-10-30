@@ -1,0 +1,235 @@
+<app-loader></app-loader>
+
+<div class="main-container">
+
+    <div class="logo">
+        <a routerLink="/homepage"><img src="{{imageUrl}}"></a>
+    </div>
+    <div class="header">
+        <div class="heading">
+            <a routerLink="/homepage"><h1>PARKING GO</h1></a>
+        </div>
+        <div class="buttons">
+            <a routerLink="/dashboard"><button>Sign In</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button>Sign Up</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="one">
+            <img src="https://sukripta.github.io/parking-go/assets/images/Image-1.jpeg">
+            <div class="hidden">
+                <p id="one">There are parking spaces scattered across any city, but are difficult to find when you need them on the go.</p>
+                <button class="btn-link">About Us&nbsp;<i class="fa fa-play" aria-hidden="true"></i></button>
+            </div>
+
+        </div>
+        <div class="two">
+            <img src="https://sukripta.github.io/parking-go/assets/images/Image-2.jpeg">
+            <div class="hidden">
+                <p id="two">Parking Go makes the job easy for you, by allowing you to book spots directly from your phone.</p>
+                <button class="btn-diff">Worldwide&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></button>
+            </div>
+
+        </div>
+        <div class="three">
+            <img src="https://sukripta.github.io/parking-go/assets/images/Image-3.jpeg">
+            <div class="hidden">
+                <p id="three">You can also register slots owned by you, to be used by those in need of parking.</p>
+                <button class="btn-out">News&nbsp;<i class="fa fa-external-link-square" aria-hidden="true"></i></button>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div id="copyright">
+            <p>© Parking GO-2020</p>
+        </div>
+    </div>    
+</div>
+
+<style>
+    .buttons {
+        position: absolute;
+        width: 20%;
+        height: 70%;
+        right: 2%;
+        top: 35%;
+    }
+    .buttons button {
+        background: none;
+        color: #f8e9a1;
+        font-size: 1.5vw;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        outline: none;
+        border: none;
+        padding: 5%;
+        transition: all 0.5s;
+    }
+    .buttons button:hover {
+        background-color: #f8e9a1;
+        border-radius: 20px;
+        color: #24305E;
+    }
+
+    .logo img {
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        height: 80%;
+        width: 80%;
+
+    }
+    .logo {
+        position: absolute;
+        width: 10%;
+        left: 5%;
+        top: 0%;
+        height: 20%;
+        background-color: #f8e9a1;
+    }
+    
+    #copyright{
+        position: absolute;
+        right: 5%;
+    }
+    #copyright p {
+        color: #f8e9a1;
+        
+        font-weight: 400;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        height: 5%;
+        background-color: #24305E;
+    }
+    .header {
+        position: absolute;
+        width: 80%;
+        left: 15%;
+        top: 0%;
+        height: 20%;
+        background-color: #24305E;
+
+    }
+
+    .btn-link {
+        outline: none;
+        background-color: #374785;
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 3%;
+        font-size: 1.5vw;
+        color: white;
+        border: none;
+    }
+    .btn-out {
+        outline: none;
+        background-color: #f76c6c;
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 3%;
+        font-size: 1.5vw;
+        color: white;
+        border: none;
+    }
+    .btn-diff {
+        outline: none;
+        text-decoration: none;
+        background-color: #f8e9a1;
+        border-radius: 50px;
+        padding: 3%;
+        font-size: 1.5vw;
+        color: #374785;
+        border: none;
+    }
+
+    .hidden{
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 60%;
+        left: 7.5%;
+        transition: opacity 1000ms, visibility 0s;
+    }
+    #one {
+        color: white;
+        line-height: 25px;
+        font-size: 1.5vw;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #two {
+        line-height: 25px;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #three {
+        line-height: 25px;
+        color: #374785;
+        font-size: 1.5vw;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .one:hover .hidden,.two:hover .hidden,.three:hover .hidden{
+        visibility: visible;
+        opacity: 1;
+    }
+    .content {
+        display: flex;
+        position: relative;
+        top: 25%;
+        height: 70%;
+        padding-right: 0%;
+        padding-left: 0%;
+    }
+    .one img,.two img,.three img {
+        position: absolute;
+        left: 7.5%;
+        top: 10%;
+        border-radius: 100%;
+        height: 85%;
+        width: 85%;
+        transition: all 0.5s;
+
+    }
+    .one {
+        flex: 1;
+        position: relative;
+        background-color: #f76c6c;
+    }
+    .one:hover img,.three:hover img,.two:hover img {
+        transform: scale(0.5);
+        top: -10%;
+    }
+    .two {
+        position: relative;
+        flex: 1;
+        background-color: #374785;
+    }
+    .three {
+        position: relative;
+        flex: 1;
+        background-color: #f8e9a1;
+    }
+
+    .main-container {
+        background-color: #a8d0e6;
+        width: 100%;
+        height: 100%;
+    }
+
+    .heading h1 {
+        color: #f8e9a1;
+        position: absolute;
+        left: 12%;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 3px;
+        font-size: 5vw;
+        top: 38%;
+    }
+</style>

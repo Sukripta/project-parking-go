@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,6 +45,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent,NavbarComponent]
+  bootstrap: [AppComponent,NavbarComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

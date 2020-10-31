@@ -1,11 +1,16 @@
 #image {
     opacity: 1;
     animation: fade 1.2s infinite linear;
+    height: 250px;
+    width: 250px;
+}
+
+ngx-spinner {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 @keyframes fade{
     0%,100% { opacity: 0;}
     50% {opacity: 1;}
-}
-.ngx {
-    position: relative;
 }

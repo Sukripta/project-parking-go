@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 
@@ -7,17 +8,16 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  imageUrl = "https://i.ibb.co/bzkxx2K/Logo-removebg-preview.png";
-  searchUrl = "https://cdn.pixabay.com/photo/2019/08/03/09/52/map-4381478__340.jpg";
-  registerUrl = "https://image.freepik.com/free-vector/services-concept_62688-108.jpg";
-  
-  constructor(private spinner:NgxSpinnerService) { }
+  array;
+  post = {"email":"12200116031s@gmail.com"}
+
+  constructor(public http:HttpClient) { 
+    this.http.post("https://war-ball.000webhostapp.com/getuserdetails.php",JSON.stringify(this.post)).subscribe(response => {this.array = response;console.log(this.array)})
+    // fetch("https://jsonblob.com/api/a8640868-f7e9-11ea-aed3-9f6ff5adb407").then(response => response.json()).then(json => this.array = json)
+  }
 
   ngOnInit(): void {
-    this.spinner.show();
-
-    setTimeout(() => {
-      this.spinner.hide();
-    },2500);
+    throw new Error('Method not implemented.');
   }
+
 }

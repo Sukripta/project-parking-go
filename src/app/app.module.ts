@@ -6,6 +6,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 // import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatSidenavModule,
     NgbModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent,NavbarComponent],

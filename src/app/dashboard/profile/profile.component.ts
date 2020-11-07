@@ -24,6 +24,9 @@ export class ProfileComponent implements OnInit {
     // fetch("https://jsonblob.com/api/a8640868-f7e9-11ea-aed3-9f6ff5adb407").then(response => response.json()).then(json => this.array = json)
   }
 
+  deleteVehicle(number: any) {
+    return this.http.post("https://war-ball.000webhostapp.com/deleteVehicle.php",JSON.stringify({"number":number})).subscribe(response => {console.log(response);this.http.post("https://war-ball.000webhostapp.com/getuserdetails.php",JSON.stringify(this.post)).subscribe(response => {this.array1 = response;console.log(this.array1)})});
+  }
 
 
 

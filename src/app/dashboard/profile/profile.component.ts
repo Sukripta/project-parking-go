@@ -8,13 +8,24 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  array;
+  array1;
+  array2;
+  array3;
+  array4;
+  c;
   post = {"email":"12200116031s@gmail.com"}
 
+  vehicles = ["#","Car Type","Car Model","Car Number","#"]
   constructor(public http:HttpClient) { 
-    this.http.post("https://war-ball.000webhostapp.com/getuserdetails.php",JSON.stringify(this.post)).subscribe(response => {this.array = response;console.log(this.array)})
+    this.http.post("https://war-ball.000webhostapp.com/getuserdetails.php",JSON.stringify(this.post)).subscribe(response => {this.array1 = response;console.log(this.array1)})
+    // this.http.post("https://war-ball.000webhostapp.com/getspotlistrenter.php",JSON.stringify(this.post)).subscribe(response => {this.array2 = response;console.log(this.array2)})
+    // this.http.post("https://war-ball.000webhostapp.com/getactivebookinglist.php",JSON.stringify(this.post)).subscribe(response => {this.array3 = response;console.log(this.array3)})
+    // this.http.post("https://war-ball.000webhostapp.com/getpreviousbookinglist.php",JSON.stringify(this.post)).subscribe(response => {this.array4 = response;console.log(this.array4)})
     // fetch("https://jsonblob.com/api/a8640868-f7e9-11ea-aed3-9f6ff5adb407").then(response => response.json()).then(json => this.array = json)
   }
+
+
+
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');

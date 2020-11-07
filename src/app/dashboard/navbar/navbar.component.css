@@ -117,7 +117,8 @@
     transition: width 0.5s;
 }
 
-.parent:hover .child #hr{ width: 15%; }
+.one:hover .child #hr{ width: 15%; }
+.two:hover .child #hr{ width: 15%; }
 
 
 #detail {
@@ -137,9 +138,12 @@
     border-radius: 100px;
     transition: transform 0.5s;
 }
-#search-img:hover {
-    transform: scale(1.2);
-    
+.one:hover #search-img {
+    transform: scale(1.2);  
+}
+
+.two:hover #search-img {
+    transform: scale(1.2);  
 }
 
 .one {

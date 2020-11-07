@@ -1,28 +1,29 @@
 #list {
     position: absolute;
     right: 0%;
-    width: 62%;
+    width: 60%;
     top: 40%;
 }
 .list a {
     text-decoration: none;
 }
 .list li{
+    padding: 1%;
     color: #374785;
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2vw;
-    margin-right: 3%;
+    margin-right: 1%;
     display: inline;
     list-style: none;
     list-style-type: none;
-    transition: all 0.2s;
+    transition: all 0.5s;
+    border-radius: 40px;
+
 }
 .list li:hover {
     background-color: #374785;
     color: white;
-    padding: 1.2%;
-    border-radius: 40px;
 }
 #info {
     position: absolute;

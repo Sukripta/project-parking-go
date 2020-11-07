@@ -1,2 +1,29 @@
 <app-loader></app-loader>
 <app-router></app-router>
+
+<div class="table table-hover">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type ID</th>
+        <th scope="col">Spot ID</th>
+        <th scope="col">Number</th>
+        <th scope="col">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let arr of array2;index as i">
+        <th>{{i+1}}</th>
+        <td>{{arr.typeId}}</td>
+        <td>{{arr.spotId}}</td>
+        <td>{{arr.number}}</td>
+        <td>{{arr.cost}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  
+</style>

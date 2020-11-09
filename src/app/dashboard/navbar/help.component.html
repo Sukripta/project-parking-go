@@ -1,1 +1,63 @@
-<h1>This is Help.</h1>
+<div id="help">
+    <h1>Write to us!</h1>
+    <form [formGroup]="form" #f="ngForm">
+        <div class="form-group">
+            <div class="type">
+                <label for="type">Type of Query:</label>
+                <input formControlName="type" id="type" type="text" class="form-control"
+                    placeholder="For eg :- Network Issue, Data Incorrect">
+                <div *ngIf="form.get('type').touched && form.get('type').invalid" class="alert alert-danger">
+                    <div *ngIf="form.get('type').errors.required">
+                        Please enter the Type of Query.
+                    </div>
+                </div>
+            </div>
+
+            <div class="explain">
+                <label for="explain">Detail of Query:</label>
+                <textarea class="form-control" id="explain" formControlName="explain"
+                    placeholder="Please give more details."></textarea>
+                <div class="alert alert-danger" *ngIf="form.get('explain').touched && form.get('explain').invalid">
+                    Please give more details.
+                </div>
+            </div>
+            <div id="buttons">
+                <button mat-button class="btn btn-app" type="submit" [disabled]="!f.valid" [mat-dialog-close]>Submit</button>
+                <button mat-button class="btn" type="submit" [mat-dialog-close]>Cancel</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<style>
+    
+    .type,.explain,#buttons {
+        width: 100%;
+        margin-top: 5%;
+    }
+    
+    .alert {
+        background-color: white;
+        color: red;
+        font-size: 12px;
+        border: none;
+        padding: 0%;
+        font-weight: 700;
+    }
+
+    .btn {
+        background-color: #f76c6c;
+        color: white;
+        padding: 4%;
+        border-radius: 20px;
+        margin-right: 10%;
+    }
+    .btn-app {
+        background-color:  #24305E;
+        color: white;
+        padding: 4%;
+        border-radius: 20px;
+        margin-right: 10%;
+    }
+</style>

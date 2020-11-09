@@ -12,7 +12,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarComponent } from './dashboard/navbar/navbar.component';
+import { ContactComponent, HelpComponent, NavbarComponent } from './dashboard/navbar/navbar.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { ActiveComponent } from './dashboard/active/active.component';
 import { PreviousComponent } from './dashboard/previous/previous.component';
@@ -21,6 +21,7 @@ import { RegisterComponent } from './dashboard/register/register.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RouterComponent } from './dashboard/router/router.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     RegisterComponent,
     LoaderComponent,
     RouterComponent,
-    HomepageComponent
+    HomepageComponent,
+    HelpComponent,
+    ContactComponent
     
   ],
   imports: [
@@ -46,7 +49,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent,NavbarComponent],

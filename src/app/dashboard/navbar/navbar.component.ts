@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -28,10 +29,14 @@ export class NavbarComponent implements OnInit {
   templateUrl: './help.component.html',
 })
 export class HelpComponent {
+  form = new FormGroup({
+    type: new FormControl('',Validators.required),
+    explain:new FormControl('',Validators.required)
+  });
 }
 
 @Component({
-  selector: 'app-help',
+  selector: 'app-contact',
   templateUrl: './contact.component.html',
 })
 export class ContactComponent {

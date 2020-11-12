@@ -1,0 +1,76 @@
+.profile-fb{
+    background: #3B5998;
+    color: white;
+    margin-right: 10%;
+    font-size: 2vw;
+    padding: 3% 4% 3% 4%;
+    border-radius: 100%;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.profile-fb:hover{
+    background: #3b58989d;
+    
+}
+
+.profile-tw{
+    background:rgb(85,172,238);
+    color: white;
+    margin-right: 10%;
+    font-size: 2vw;
+    padding: 3% 4% 3% 4%;
+    border-radius: 100%;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.profile-tw:hover{
+    background:rgba(85, 172, 238, 0.637);
+    
+}
+
+.profile-lin{
+    background: rgb(0,123,181);
+    color: white;
+    margin-right: 10%;
+    font-size: 2vw;
+    padding: 3% 4% 3% 4%;
+    border-radius: 100%;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.profile-lin:hover{
+    background: rgba(0, 124, 181, 0.651);
+    
+}
+
+
+.profile-in{
+    background: rgb(18,86,136);
+    color: white;
+    margin-right: 10%;
+    font-size: 2vw;
+    padding: 3% 4% 3% 4%;
+    border-radius: 100%;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.profile-in:hover{
+    background: rgba(18, 87, 136, 0.562);
+    
+}

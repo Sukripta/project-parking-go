@@ -23,6 +23,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { RouterComponent } from './dashboard/router/router.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterComponent,
     HomepageComponent,
     HelpComponent,
-    ContactComponent
+    ContactComponent,
+    SignUpComponent
     
   ],
   imports: [

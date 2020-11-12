@@ -14,11 +14,10 @@
             <button>Sign Up</button>
         </div>
     </div>
-
-   <!--Comment-->
-
-   
-
+    <div class="hidden-buttons">
+        <a routerLink="/dashboard"><button>Sign In</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button>Sign Up</button>       
+    </div>
 
     <div class="content">
         <div class="one">
@@ -30,7 +29,7 @@
 
         </div>
         <div class="two">
-            <img src="https://sukripta.github.io/parking-go/assets/images/Image-2.jpeg">
+            <img src="https://sukripta.github.io/parking-go/assets/images/Image-3.jpeg">
             <div class="hidden">
                 <p id="two">Parking Go makes the job easy for you, by allowing you to book spots directly from your phone.</p><br>
                 <button class="btn-diff">Worldwide&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></button>
@@ -38,12 +37,26 @@
 
         </div>
         <div class="three">
-            <img src="https://sukripta.github.io/parking-go/assets/images/Image-3.jpeg">
+            <img src="https://sukripta.github.io/parking-go/assets/images/Image-2.jpeg">
             <div class="hidden">
                 <p id="three">You can also register slots owned by you, to be used by those in need of parking.</p><br>
                 <button class="btn-out">News&nbsp;<i class="fa fa-external-link-square" aria-hidden="true"></i></button>
             </div>
 
+        </div>
+    </div>
+    <div class="hidden-content">
+        <div class="hidden-one">
+            <p id="hidden-one">There are parking spaces scattered across any city, but are difficult to find when you need them on the go.</p><br>
+                <button class="btn-hidden">About Us&nbsp;<i class="fa fa-play" aria-hidden="true"></i></button>
+        </div>
+        <div class="hidden-two">
+            <p id="hidden-one">Parking Go makes the job easy for you, by allowing you to book spots directly from your phone.</p><br>
+                <button class="btn-hidden">Worldwide&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></button>
+        </div>
+        <div class="hidden-three">
+            <p id="hidden-one">You can also register slots owned by you, to be used by those in need of parking.</p><br>
+                <button class="btn-hidden">News&nbsp;<i class="fa fa-external-link-square" aria-hidden="true"></i></button>
         </div>
     </div>
     <div class="footer">
@@ -54,6 +67,11 @@
 </div>
 
 <style>
+   
+    .hidden-buttons {
+        display: none;
+    }
+
     .buttons {
         position: absolute;
         width: 20%;
@@ -159,6 +177,9 @@
         left: 7.5%;
         transition: opacity 1000ms, visibility 0s;
     }
+    .hidden p {
+        width: 90%;
+    }
     #one {
         color: white;
         line-height: 25px;
@@ -236,5 +257,105 @@
         letter-spacing: 3px;
         font-size: 5vw;
         top: 38%;
+    }
+    .hidden-content {
+        display: none;
+    }
+
+    @media screen and (max-width: 480px) {
+        .heading h1 {
+            font-size: 15vw;
+            
+        }
+        .header {
+            width: 100%;
+            left: 0%;
+            height: 15%;
+        }
+        .logo {
+            top: 15%;
+            height: 10%;
+            left: 0%;
+            width: 20%;
+        }
+        .buttons {
+            display: none;
+        }
+        .hidden-buttons {
+            display: block;
+            position: absolute;
+            width: 50%;
+            height: 15%;
+            right: 0%;
+            top: 18%;
+        }
+        .hidden-buttons button {
+            font-size: 5vw;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            color: #374785;
+            padding: 3%;
+            font-weight: 500;
+        }
+       .content {
+           display: none;
+       }
+       .hidden-content {
+           display: block;
+           position: absolute;
+           top: 25%;
+           height: 70%;
+           width: 100%;
+       }
+       .hidden-one {
+           position: relative;
+           background-image:linear-gradient(rgba(255, 255, 255, 0.815), rgba(255, 255, 255, 0.638)),  url(https://sukripta.github.io/parking-go/assets/images/Image-1.jpeg);
+           background-repeat: no-repeat;
+           background-position: center;
+           height: 33%;
+           transition: height 0.5s;
+
+       }
+       .hidden-two {
+           background-image:linear-gradient(rgba(255, 255, 255, 0.815), rgba(255, 255, 255, 0.638)),  url(https://sukripta.github.io/parking-go/assets/images/Image-3.jpeg);
+           position: relative;
+           height: 33%;
+           background-position: center;
+           transition: height 0.5s;
+           background-repeat: no-repeat;
+
+       }
+       .hidden-three {
+           background-image:linear-gradient(rgba(255, 255, 255, 0.815), rgba(255, 255, 255, 0.638)),  url(https://sukripta.github.io/parking-go/assets/images/Image-2.jpeg);
+           position: relative;
+           height: 35%;
+           background-repeat: no-repeat;
+           transition: height 0.5s;
+           background-position: center;
+       }    
+       #hidden-one {
+           position: absolute;
+           top: 5%;
+           left: 5%;
+           font-size: 4.5vw;
+           line-height: 25px;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       } 
+       .btn-hidden {
+           position: absolute;
+           bottom: 20%;
+           right: 15%;
+           outline: none;
+           border: none;
+           background-color: #f76c6c;
+           color: white;
+           padding: 2%;
+           font-size: 4.5vw;
+           border-radius: 20px;
+           width: 35%;
+
+       }
+       
     }
 </style>

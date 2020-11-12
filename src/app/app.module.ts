@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
 // import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { RouterComponent } from './dashboard/router/router.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { SearchmapComponent } from './searchmap/searchmap.component';
 
@@ -72,6 +74,7 @@ export function playerFactory() {
     HomepageComponent,
     HelpComponent,
     ContactComponent,
+
     BookingDetailsFormComponent,
     BookingFailedDialogComponent,
     BookingSuccessDialogComponent,
@@ -83,6 +86,10 @@ export function playerFactory() {
     SpotIdDialogComponent,
     RegisterConfirmDialogComponent,
     VehicleNumberFormatDialogComponent,
+
+    SignUpComponent
+    
+
   ],
   imports: [
     BrowserModule,
@@ -96,6 +103,7 @@ export function playerFactory() {
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     LottieModule.forRoot({ player: playerFactory }),
@@ -105,6 +113,9 @@ export function playerFactory() {
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+
+    MatMenuModule
+
   ],
   providers: [AppData],
   bootstrap: [AppComponent],

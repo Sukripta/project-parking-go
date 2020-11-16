@@ -55,8 +55,10 @@ export class SearchmapComponent implements OnInit {
         this.bookingDetails = JSON.parse(JSON.stringify(data));
         if (this.bookingDetails.vehicleType == '4-wheeler')
           this.vehicleType = '1';
-        if (this.bookingDetails.vehicleType == '2-wheeler')
+        else if (this.bookingDetails.vehicleType == '2-wheeler')
           this.vehicleType = '2';
+          else
+          this.vehicleType=this.bookingDetails.vehicleType;
 
         this.carNumber = this.bookingDetails.vehicleNumber;
         this.carModel = this.bookingDetails.vehicleModel;
@@ -78,7 +80,7 @@ export class SearchmapComponent implements OnInit {
           toDate.getSeconds()
         )}`;
       } else {
-        this.router.navigate(['/dashboard/book-spots']);
+        this.router.navigate(['']);
       }
     });
   }
@@ -218,7 +220,8 @@ export class SearchmapComponent implements OnInit {
   }
 
   upDateSpotsUI(data: any, destMarker: google.maps.Marker, radius: number) {
-    this.oldData = JSON.stringify(data);
+    if(destMarker && data && radius)
+    {this.oldData = JSON.stringify(data);
     this.spots.length = 0;
     this.spots.push(
       ...data
@@ -270,7 +273,7 @@ export class SearchmapComponent implements OnInit {
         this.selectedSpotData = JSON.parse(JSON.stringify(spot.data));
         //console.log(this.selectedSpotData);
       });
-    });
+    });}
   }
 
   findMinimumDistanceSpot(spots: any[]) {
@@ -335,4 +338,3 @@ export class SearchmapComponent implements OnInit {
     return '' + num;
   }
 }
-

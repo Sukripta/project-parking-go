@@ -55,6 +55,8 @@ import { SpotIdDialogComponent } from './register-spot/spot-id-dialog/spot-id-di
 import { RegisterConfirmDialogComponent } from './register-spot/register-confirm-dialog/register-confirm-dialog.component';
 import { VehicleNumberFormatDialogComponent } from './searchmap/vehicle-number-format-dialog/vehicle-number-format-dialog.component';
 import { ActiveBookingDetailsComponent } from './active-booking-details/active-booking-details.component';
+import { QrPageComponent } from './qr-page/qr-page.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 export function playerFactory() {
   return player;
@@ -91,7 +93,10 @@ export function playerFactory() {
     ActiveBookingDetailsComponent,
 
 
-    SignUpComponent
+    SignUpComponent,
+
+
+    QrPageComponent
     
 
 
@@ -119,7 +124,8 @@ export function playerFactory() {
     MatDatepickerModule,
     MatNativeDateModule,
 
-    MatMenuModule
+    MatMenuModule,
+    QRCodeModule
 
   ],
   providers: [AppData],

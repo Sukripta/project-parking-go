@@ -32,4 +32,16 @@ export class DatabaseService {
   {
     return this.dataService.postData(`${this.appData.appData.databaseApi}getCarsList.php`,userData);
   }
+
+  getActiveBooking(bookingId)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}getActiveBooking.php`,bookingId);
+
+  }
+
+  getActiveBookingList(booker)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}getactivebookinglist.php`,booker);
+
+  }
 }

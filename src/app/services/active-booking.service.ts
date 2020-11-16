@@ -9,7 +9,7 @@ export class ActiveBookingService {
   private _activeBooking=new BehaviorSubject(null);
   constructor() { }
 
-  get bookingDetails()
+  get activeBooking()
   {
     return this._activeBooking;
   }

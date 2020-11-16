@@ -13,31 +13,118 @@
             </div>
             
         </div>
+
         <div class="one" routerLink="/dashboard/book-spots" style="cursor: pointer;">
             
             <div id="search" >
+
                 <a><img id="search-img" src="{{searchUrl}}"></a>
                 <div class="parent" >
                     <p id="detail">SEARCH&nbsp;<i class="fa fa-search"></i></p>
                     <div class="child">
                         <hr id="hr">
                     </div>
-                    <p id="info">Click on the icon above to search for Parking</p>
+                    <p id="info">Click to search for Parking</p>
                 </div>
             </div>
         </div>
+
         <div class="two" routerLink="/dashboard/register-spots" style="cursor: pointer;">
             <div id="search" >
+
                 <a ><img id="search-img" src="{{registerUrl}}"></a>
                 <div class="parent">
                     <p id="detail">REGISTER&nbsp;<i class="fa fa-user-plus"></i></p>
                     <div class="child">
                         <hr id="hr">
                     </div>
-                    <p id="info">Click on the icon above to register for a Spot</p>
+                    <p id="info">Click to register for a Spot</p>
                 </div>
             </div>
         </div>
         
     </div>
     
+
+
+<style>
+    @media screen and (max-width: 480px) {
+        #search img {
+            display: none;
+        }
+        #detail {
+            left: 10%;
+            top: 40%;
+            font-weight: 700;
+            color: #24305E;
+            font-size: 4.5vw;
+        }
+        #info {
+            left: 0%;
+            top: 60%;
+            color: #24305E;
+            font-weight: 600;
+            font-size: 4vw;
+        }
+        .image {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.815), rgba(255, 255, 255, 0.638)), url(https://i.ytimg.com/vi/oBi3lSEpkmg/maxresdefault.jpg);
+            width: 100%;
+            top: 40%;
+            height: 60%;
+        }
+        #image-one {
+            display: block;
+            top: 10%;
+        }
+        #image-two {
+            display: block;
+            width: 50%;
+            margin-left: 30%;
+        }
+        #quote {
+            display: block;
+            top: 30%;
+            left: 5%;
+            width: 90%;
+        }
+        #image-one button{
+            font-size: 4.5vw;
+            padding: 10px;
+        }
+        #image-two button {
+            font-size: 4.5vw;
+            padding: 10px;
+            width: 80%;
+            margin-top: 40%;
+            margin-left: 50%;
+        }
+        #quote p {
+            font-size: 6vw;
+        }
+        .one {
+            height: 30%;
+            top: 10%;
+            width: 50%;
+            left: 0%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.515), rgba(255, 255, 255, 0.338)), url(https://cdn.pixabay.com/photo/2019/08/03/09/52/map-4381478__340.jpg);
+            background-color: white;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 300px;
+            opacity: 1;
+        }
+        .two {
+            height: 30%;
+            width: 50%;
+            top: 10%;
+            opacity: 1;
+            left: 50%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.515), rgba(255, 255, 255, 0.338)), url(https://image.freepik.com/free-vector/services-concept_62688-108.jpg);
+            background-color: white;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 300px;
+        }
+        
+    }
+</style>

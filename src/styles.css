@@ -8,3 +8,9 @@
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.dialog-demo .mat-dialog-container {
+    background-color: white;
+    width: 400px;
+    height: 400px;
+}

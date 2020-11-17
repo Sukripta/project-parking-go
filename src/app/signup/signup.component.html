@@ -1,0 +1,58 @@
+<div class="bg-img pt-5">
+    <form [formGroup]="form" (ngSubmit)="signup()">
+
+        <h2>Sign Up</h2>
+        
+        <div class="alert alert-danger" *ngIf="form.errors">The username and password is invalid</div>
+        <div class="form-group">
+            <label for="FirstName">
+                First Name<span> *</span>
+            </label>
+            <input type="text" class="form-control" id="FirstName" formControlName="FirstName" />
+            <div *ngIf="FirstName.touched && FirstName.invalid">
+                <div *ngIf="FirstName.errors.required" class="alert alert-danger">First Name required</div>
+                <div *ngIf="FirstName.errors.cannotContainSpace" class="alert alert-danger">First Name cannot contain space</div>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="LastName">
+                Last Name<span> *</span>
+            </label>
+            <input type="text" class="form-control" id="LastName" formControlName="LastName" />
+            <div *ngIf="LastName.touched && LastName.invalid">
+                <div *ngIf="LastName.errors.required"  class="alert alert-danger">Last Name required</div>
+                <div *ngIf="LastName.errors.cannotContainSpace" class="alert alert-danger">Last Name cannot contain space</div>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="email">
+                Email<span> *</span>
+            </label>
+            <input type="email" class="form-control" id="email" formControlName="email" />
+            <div *ngIf="(email.invalid && email.touched) || email.dirty">
+                <div *ngIf="email.errors?.required" class="alert alert-danger">Email is required</div>
+                <div *ngIf="email.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div>
+              </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="phnNumber">
+                Phone Number<span> *</span>
+            </label>
+            <input type="number" class="form-control" id="phnNumber" formControlName="phnNumber" />
+            <div *ngIf="phnNumber.touched && phnNumber.invalid">
+                <div *ngIf="phnNumber.errors.required" class="alert alert-danger">Phone Number required</div>
+                <div *ngIf="phnNumber.errors.pattern" class="alert alert-danger">Please, Enter 10 digit Phone Number</div>
+            </div>
+        </div>
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    
+        <button type="submit" class="btn btn-outline-primary mb-2" [disabled]="!form.valid">Register</button>
+        <p>Already an user? <a routerLink="/signin" style="color:dodgerblue">Sign In</a>.</p>
+
+    </form>
+</div>
+    
+

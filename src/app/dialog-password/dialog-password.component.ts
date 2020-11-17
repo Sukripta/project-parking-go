@@ -2,6 +2,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CommonValidators } from '../common-validators';
+import { DialogUsernameComponent } from '../dialog-username/dialog-username.component';
 
 @Component({
   selector: 'app-dialog-password',
@@ -26,11 +27,11 @@ export class DialogPasswordComponent implements OnInit {
     return this.form3.get('username')
   }
 
-  // open() {
-  //   this.dialog.open(DialogUsernameComponent, {
-  //     panelClass: 'dialog-username'
-  //   })
-  // }
+  open() {
+    this.dialog.open(DialogUsernameComponent, {
+      panelClass: 'dialog-username'
+    })
+  }
 
   ngOnInit(): void {
   }

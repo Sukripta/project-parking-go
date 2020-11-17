@@ -1,1 +1,17 @@
-<p>dialog-username works!</p>
+<form [formGroup]="form4">
+    <div class="form-group mt-2">
+        <label>Email</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="Enter your registered Email-ID"/>
+        <div *ngIf="(email.invalid && email.touched) || email.dirty">
+            <div *ngIf="email.errors?.required" class="alert alert-danger">Email is required</div>
+            <div *ngIf="email.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div>
+          </div>
+    </div>
+    <p class="text-secondary">Your username will be sent to the entered email id, if registered.</p>
+    <div class="form-group">
+        <button class="btn btn-outline-primary" [disabled]="!form4.valid">Submit</button>
+        <button mat-dialog-close class="btn btn-light ml-2">Cancel</button>
+    </div>
+</form>
+
+

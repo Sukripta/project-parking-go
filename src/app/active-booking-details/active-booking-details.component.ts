@@ -59,4 +59,12 @@ export class ActiveBookingDetailsComponent implements OnInit,OnDestroy {
 
   }
 
+  openQRExit()
+  {
+    
+    this.qr.setQR({"bId":this.bookingId,"exit":1});
+    this.router.navigate(['active-booking-details/qr-page']);
+
+  }
+
 }

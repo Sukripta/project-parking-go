@@ -1,3 +1,4 @@
+import * as Crypto from 'crypto-js';
 export class AppUtility
 {
    static formatDate(date:Date):string
@@ -30,5 +31,12 @@ export class AppUtility
     minutes = minutes < 10 ? '0'+minutes : minutes;
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
+  }
+
+  static AESEncrypt(text:string,key:string):string
+  {
+    let encrypted=Crypto.AES.encrypt(text,key);
+    return encrypted.toString();
+
   }
 }

@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-registered',
@@ -14,11 +15,29 @@ import { Component, OnInit } from '@angular/core';
     ]),
   ]
 })
-export class RegisteredComponent {
-  array2;
-  post = {"email":"12200116031s@gmail.com"}
-  constructor(public http:HttpClient) {
-    this.http.post("https://war-ball.000webhostapp.com/getspotlistrenter.php",JSON.stringify(this.post)).subscribe(response => {this.array2 = response;console.log(this.array2)})
+export class RegisteredComponent implements OnInit {
+
+  owner:string="sayantanbarik729@gmail.com";
+  spots:any[]=[];
+  
+  constructor(private database:DatabaseService) {
+
+  }
+  ngOnInit(): void {
+    this.database.getRegisteredSpotList({"email":this.owner}).subscribe((response)=>{
+      response.then((data)=>{
+        this.spots.length=0;
+        data.forEach((item)=>{
+          this.spots.push(item);
+        });
+
+      })
+    })
+  }
+
+  openRegisterDetails(i)
+  {
+    
 
   }
 }

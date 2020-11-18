@@ -44,4 +44,13 @@ export class DatabaseService {
     return this.dataService.postData(`${this.appData.appData.databaseApi}getactivebookinglist.php`,booker);
 
   }
+  getPreviousBookingList(booker)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}getpreviousbookinglist.php`,booker);
+
+  }
+  getRegisteredSpotList(owner)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}getspotlistrenter.php`,owner);
+  }
 }

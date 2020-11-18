@@ -57,6 +57,7 @@ import { VehicleNumberFormatDialogComponent } from './searchmap/vehicle-number-f
 import { ActiveBookingDetailsComponent } from './active-booking-details/active-booking-details.component';
 import { QrPageComponent } from './qr-page/qr-page.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { RegisteredSpotDetailsComponent } from './registered-spot-details/registered-spot-details.component';
 
 export function playerFactory() {
   return player;
@@ -96,7 +97,10 @@ export function playerFactory() {
     SignUpComponent,
 
 
-    QrPageComponent
+    QrPageComponent,
+
+
+    RegisteredSpotDetailsComponent
     
 
 

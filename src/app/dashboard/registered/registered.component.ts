@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
+import { RegisteredSpotService } from 'src/app/services/registered-spot.service';
 
 @Component({
   selector: 'app-registered',
@@ -20,7 +21,7 @@ export class RegisteredComponent implements OnInit {
   owner:string="sayantanbarik729@gmail.com";
   spots:any[]=[];
   
-  constructor(private database:DatabaseService) {
+  constructor(private database:DatabaseService,private registeredSpot:RegisteredSpotService) {
 
   }
   ngOnInit(): void {
@@ -37,7 +38,7 @@ export class RegisteredComponent implements OnInit {
 
   openRegisterDetails(i)
   {
-    
+    this.registeredSpot.setSpotData(JSON.parse(JSON.stringify(this.spots[i])));
 
   }
 }

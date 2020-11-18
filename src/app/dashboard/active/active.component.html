@@ -1,63 +1,120 @@
 <app-loader></app-loader>
-<div
-  style="
+
+
+
+<div id="main-container">
+  <app-router></app-router>
+  <div class="content-container">
+    <div class="content" *ngFor="let booking of bookings;let i=index" (click)="showDetails(i)">
+      <div class="address">
+        <p><i class="fas fa-map-marked-alt"></i>&nbsp;{{ booking.address }}</p>
+      </div>  
+      <div class="hidden">
+        <div class="time">
+          <p>{{ booking.fromtime }} <br> to <br>{{ booking.totime }}</p>
+
+        </div>
+        
+      </div>
+      <div class="active">
+        <p>Active</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+
+  .hidden {
+    font-size: 1.1vw;
+    background-color: #24305E;
+    color: #a8d0e6;
+    border-radius: -10px;
+    text-align: center;
+    padding: 2%;
+
+  }
+  .address p{
+    font-weight: 600;
+    font-size: 1.5vw;
+  }
+
+  .active {
+    color: green;
+    font-weight: 1000;
+    position: absolute;
+    right: 10%;
+    font-size: 1.3vw;
+  }
+  
+  .content-container {
+    position: absolute;
+    top: 20%;
+    width: 80%;
+    height: 50%;
+    left: 0%;
+    margin-right: 10%;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 5%;
+    row-gap: 15%;
+  }
+
+  .content:hover{
+    transform: scale(1.15);
+    border-radius: 40px;
+  }
+  
+  .content {
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    padding: 5%;
+    background-color: #a8d0e6;
+    color: #24305E;
+    width: 100%;
+    height: 70%;
+    transition: all 1s;
+    
+  }
+  
+  #main-container {
+    width: 100%;
+    height: 100%;
     background-image: url('assets/images/activeBookingBG.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-  "
->
-  <div
-    style="
-      background-color: rgba(0, 0, 0, 0.562);
-      width: 100%;
-      min-height: calc(100vh);
-      padding: 5% 0%;
-    "
-  >
-    <div class="px-5 mx-5">
-      <div style="padding: 10px">
-        <div
-          *ngFor="let booking of bookings;let i=index"
-          class="my-5 p-5"
-          style="
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0px 0px 10px #374785;
-            cursor: pointer;
-          "
-          (click)="showDetails(i)"
-        >
-          <div style="font-size: 3em" class="text-truncate">
-            <i
-              class="fas fa-map-marked-alt"
-              style="font-size: 0.5em; margin-right: 10px"
-            ></i
-            >{{ booking.address }}
-          </div>
-          <div class="row d-flex mt-4">
-            <div class="col">
-              <div class="p-3" style="background-color: #e0e0e0">
-                <hr style="border: 2px dashed black" />
-                <div class="text-wrap" style="font-size: 1.5em">
-                  {{ booking.fromtime }}
-                </div>
-                <div>to</div>
-                <div class="text-wrap" style="font-size: 1.5em">
-                  {{ booking.totime }}
-                </div>
-              </div>
-            </div>
-            <div
-              class="col"
-              style="font-size: 2.5em; text-align: right; color: #66bb6a"
-            >
-              Active
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  }
+
+  @media screen and (max-width: 480px){
+    .content-container {
+      display: grid;
+      grid-template-columns: auto;
+      column-gap: 0%;
+      row-gap: 2%;
+      height: 80%;
+      top: 13%;
+    }
+    .content {
+      height: 100%;
+    }
+    
+    .address p {
+      font-size: 4vw;
+    }
+
+    .hidden {
+      position: absolute;
+      top: 40%;
+      font-size: 3.5vw;
+    }
+    .active {
+      font-size: 3.5vw;
+    }
+
+  }
+</style>

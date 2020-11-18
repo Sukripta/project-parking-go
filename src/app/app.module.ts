@@ -27,7 +27,11 @@ import { LoaderComponent } from './loader/loader.component';
 import { RouterComponent } from './dashboard/router/router.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './sign-in/signin.component';
+import { DialogPasswordComponent } from './dialog-password/dialog-password.component';
+import { DialogUsernameComponent } from './dialog-username/dialog-username.component';
+
 
 import { SearchmapComponent } from './searchmap/searchmap.component';
 
@@ -79,6 +83,13 @@ export function playerFactory() {
     HelpComponent,
     ContactComponent,
 
+    SignupComponent,
+    SigninComponent,
+    DialogPasswordComponent,
+    DialogUsernameComponent,
+
+
+
     BookingDetailsFormComponent,
     BookingFailedDialogComponent,
     BookingSuccessDialogComponent,
@@ -101,6 +112,7 @@ export function playerFactory() {
 
 
     RegisteredSpotDetailsComponent
+
     
 
 

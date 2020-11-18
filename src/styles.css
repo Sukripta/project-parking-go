@@ -12,6 +12,13 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
+.dialog-demo .mat-dialog-container {
+    background-color: white;
+    width: 400px;
+    height: 400px;
+}
+
 .transparent-dialog .mat-dialog-container
 {
      background-color:#f8e9a1;
@@ -132,3 +139,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 /*Date Picker Styles End*/
+

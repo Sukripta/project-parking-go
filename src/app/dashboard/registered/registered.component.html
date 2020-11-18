@@ -1,29 +1,31 @@
 <app-loader></app-loader>
 <app-router></app-router>
+<div style="
+position: absolute;top: 10%;width: 100%;
+background-image: url('assets/images/registeredSpotsBG.jpg');
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;">
+<div class="w-100 row m-0 d-flex justify-content-center pt-5" style="background-color: rgba(0, 0, 0, 0.651);min-height: calc(90vh);">
+  <div class="col-12 col-lg-9 text-center text-lg-left" >
+    <div *ngFor="let spot of spots;let i=index" style="background-color: white;padding: 5em;margin-bottom: 5em;border-radius: 15px;cursor: pointer;" (click)="openRegisterDetails(i)">
 
-<div class="table table-hover">
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Type ID</th>
-        <th scope="col">Spot ID</th>
-        <th scope="col">Number</th>
-        <th scope="col">Cost</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let arr of array2;index as i">
-        <th>{{i+1}}</th>
-        <td>{{arr.typeId}}</td>
-        <td>{{arr.spotId}}</td>
-        <td>{{arr.number}}</td>
-        <td>{{arr.cost}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<style>
+      <div style="font-size: 3em; font-weight: bold;padding-bottom: 10px;border-bottom: 5px solid gold;">Parking Go Spot #{{spot.spotId}}</div>
+      
+      <div class="text-wrap" style="font-size: 2em;"><i
+        class="fas fa-map-marked-alt"
+        style="font-size: 0.8em; margin-right: 10px"
+      ></i
+      >{{spot.address}}</div>
+      <div style="display: flex;justify-content: flex-end;"><div class=" row" style="border: 2px dashed black;width: fit-content;background-color: #e0e0e0;">
+        <div class="col" *ngIf="spot.twonum" style="font-size: 1.5em;"><i class="fas fa-motorcycle" style=" margin-right: 10px"></i>{{spot.twonum}} slots</div>
+        <div class="col" *ngIf="spot.fournum" style="font-size: 1.5em;"><i class="fas fa-car-side" style=" margin-right: 10px"></i>{{spot.fournum}} slots</div>
+      </div></div>
+      
+      
+    </div>
+  </div>
   
-</style>
+</div>
+</div>

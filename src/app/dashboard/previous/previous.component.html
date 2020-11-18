@@ -1,2 +1,65 @@
 <app-loader></app-loader>
-<app-router></app-router>
+
+<div
+  style="
+    background-image: url('assets/images/prevBookingBG.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  "
+>
+  <div
+    style="
+      background-color: rgba(0, 0, 0, 0.651);
+      width: 100%;
+      min-height: calc(100vh);
+      padding: 5% 0%;
+    "
+  >
+    <div class="px-5 mx-5">
+      <div style="padding: 10px">
+        <div
+          *ngFor="let booking of bookings;let i=index"
+          class="my-5 p-5"
+          style="
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px #374785;
+            cursor: pointer;
+          "
+          (click)="showDetails(i)"
+        >
+          <div style="font-size: 3em" class="text-truncate">
+            <i
+              class="fas fa-map-marked-alt"
+              style="font-size: 0.5em; margin-right: 10px"
+            ></i
+            >{{ booking.address }}
+          </div>
+          <div class="row d-flex mt-4">
+            <div class="col">
+              <div class="p-3" style="background-color: #e0e0e0">
+                <hr style="border: 2px dashed black" />
+                <div class="text-wrap" style="font-size: 1.5em">
+                  {{ booking.fromtime }}
+                </div>
+                <div>to</div>
+                <div class="text-wrap" style="font-size: 1.5em">
+                  {{ booking.totime }}
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+              style="font-size: 2.5em; text-align: right; color:rgb(52,58,64)"
+            ><i class="fas fa-check-circle mr-3"></i>
+              Completed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,125 @@
+<div style="min-height: calc(100vh); background-color: brown;padding:5% 0%;">
+  <app-router></app-router>
+  <div
+    style="background-color: white; width: 65%; margin: auto;text-align: center;font-size: 1.3em;padding: 10px;border-radius: 5px;padding-bottom: 25px;"
+    *ngIf="booking"
+  >
+    <div
+      style="
+        font-size: 2em;
+        padding-bottom: 15px;
+        /* border-bottom: 2px solid GOLD; */
+        font-weight: bold;
+      "
+    >
+      Your Booking
+    </div>
+    <div
+      style="
+        box-shadow: 0px 0px 3px GOLD;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      "
+    >
+      <div style="margin-bottom: 15px">
+        <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px">
+          <span
+            style="
+              padding-right: 20px;
+              padding-bottom: 2px;
+              box-shadow: 0px 5px 0px GOLD;
+            "
+            >Spot</span
+          >
+        </div>
+        <div style="font-size: 1.1em">
+          <div>{{ booking.address }}</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 15px">
+        <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px">
+          <span
+            style="
+              padding-right: 20px;
+              padding-bottom: 2px;
+              box-shadow: 0px 5px 0px GOLD;
+            "
+            >Vehicle</span
+          >
+        </div>
+        <div style="font-size: 1.1em">
+          <div>
+            <span style="font-weight: bolder; margin-right: 10px">Number:</span
+            ><span style="padding-left: 5px; padding-right: 5px">{{
+              booking.carnum
+            }}</span>
+          </div>
+          <div>
+            <span style="font-weight: bolder; margin-right: 10px">Type:</span
+            ><span style="padding-left: 5px; padding-right: 5px">{{
+              booking.cartype == 1 ? "Four wheeler" : "Two wheeler"
+            }}</span>
+          </div>
+          <div>
+            <span style="font-weight: bolder; margin-right: 10px">Model:</span
+            ><span style="padding-left: 5px; padding-right: 5px">{{
+              booking.carmodel
+            }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 15px">
+        <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px">
+          <span
+            style="
+              padding-right: 20px;
+              padding-bottom: 2px;
+              box-shadow: 0px 5px 0px GOLD;
+            "
+            >Timeslot</span
+          >
+        </div>
+        <div style="font-size: 1.1em">
+          <div>
+            <span style="font-weight: bolder; margin-right: 10px">From:</span
+            ><span style="padding-left: 5px; padding-right: 5px">{{
+              booking.fromtime
+            }}</span>
+          </div>
+          <div>
+            <span style="font-weight: bolder; margin-right: 10px">To:</span
+            ><span style="padding-left: 5px; padding-right: 5px">{{
+              booking.totime
+            }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 15px">
+        <div style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px">
+          <span
+            style="
+              padding-right: 20px;
+              padding-bottom: 2px;
+              box-shadow: 0px 5px 0px GOLD;
+            "
+            >Cost</span
+          >
+        </div>
+        <div style="font-size: 1.1em">
+          <span style="font-weight: bolder; margin-right: 10px"
+            >&#x20b9; {{ booking.cost }}/hr</span
+          >
+          per slot
+        </div>
+      </div>
+    </div>
+    <div class="w-100">
+        <div class="btn btn-dark btn-lg mb-3 w-100" (click)="openQREntry()">View Entry QR Code</div>
+        <div class="btn btn-light w-100" (click)="openQRExit()">View Exit QR Code</div>
+      </div>
+  </div>
+</div>

@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "~@danielmoncada/angular-datetime-picker/assets/style/picker.min.css";
 .container {
     position: absolute;
     align-items: center;
@@ -9,8 +12,131 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
 .dialog-demo .mat-dialog-container {
     background-color: white;
     width: 400px;
     height: 400px;
 }
+
+.transparent-dialog .mat-dialog-container
+{
+     background-color:#f8e9a1;
+     color: black;
+     
+     
+     margin: auto;
+}
+
+.confirmDialog .mat-dialog-container
+{
+    max-height: calc(100vh);
+}
+
+.vehicle-num-dialog .mat-dialog-container
+{
+    max-height: calc(100vh);
+    
+}
+
+.vehicle-num-dialog ::-webkit-scrollbar {
+    width: 5px;
+  }
+  .vehicle-num-dialog ::-webkit-scrollbar-track {
+     
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .vehicle-num-dialog ::-webkit-scrollbar-thumb {
+    background: #f8e9a1; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .vehicle-num-dialog ::-webkit-scrollbar-thumb:hover {
+    background:gold; 
+  }
+
+/***************************************************/
+/*Date Picker Styles*/
+
+.date-picker-panel ::-webkit-scrollbar {
+    width: 5px;
+  }
+  .date-picker-panel ::-webkit-scrollbar-track {
+     
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .date-picker-panel ::-webkit-scrollbar-thumb {
+    background: #f8e9a1; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .date-picker-panel ::-webkit-scrollbar-thumb:hover {
+    background:gold; 
+  }
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected.owl-dt-calendar-cell-today {
+    box-shadow: inset 0 0 0 1px gold;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected {
+    color: rgba(0,0,0);
+    background-color: #ffd700;
+    font-weight: bold;
+}
+
+.owl-dt-container-info .owl-dt-container-info-active {
+    color: black;
+    font-weight: bold;
+    border-bottom: 4px solid gold;
+}
+
+.owl-dt-container-info {
+    font-size: 1.5em;
+    
+}
+
+.owl-dt-container-row:last-child {
+    
+    height: fit-content;
+}
+
+.owl-dt-container-buttons {
+    
+    color: #000;
+}
+
+.owl-dt-container-control-button {
+    font-size: 2em;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.owl-dt-container-control-button:hover {
+    background-color:#f8e9a1;
+    
+}
+
+.owl-dt-timer-hour12 {
+    
+     color: #000;
+     
+}
+
+.owl-dt-timer-hour12 .owl-dt-timer-hour12-box:focus .owl-dt-control-button-content, .owl-dt-timer-hour12 .owl-dt-timer-hour12-box:hover .owl-dt-control-button-content {
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border: none;
+}
+
+/*Date Picker Styles End*/
+

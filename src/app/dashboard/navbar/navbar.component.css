@@ -107,7 +107,7 @@
 
 #hr {
     position: absolute;
-    bottom: 15%;
+    bottom: 18%;
     left: 5%;
     width: 5%;
     height: 0.6%;
@@ -147,6 +147,7 @@
 }
 
 .one {
+    outline: none;
     width: 40%;
     height: 45%;
     right: 0%;

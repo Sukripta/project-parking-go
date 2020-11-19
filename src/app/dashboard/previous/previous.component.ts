@@ -12,7 +12,7 @@ import { AppUtility } from 'src/app/utility/utility';
 export class PreviousComponent implements OnInit {
 
   bookings:any[];
-  owner="12200116031s@gmail.com";
+  owner=localStorage.getItem('email');
 
   constructor(private database:DatabaseService,private prevBooking:PreviousBookingService,private router:Router) {
     this.bookings=[];
@@ -42,7 +42,7 @@ export class PreviousComponent implements OnInit {
   showDetails(i)
   {
     this.prevBooking.setBookingData({"bId":this.bookings[i].bId});
-    //this.router.navigate(['active-booking-details']);
+    this.router.navigate(['prev-booking-details']);
   }
 
 }

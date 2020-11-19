@@ -1,9 +1,9 @@
 <div
-  class="row justify-content-around"
+  class="row row-cols-1 row-cols-lg-2 justify-content-around"
   style="background-color: rgb(0, 53, 102); margin: auto"
 >
-  <div class="col col-8 p-0 m-0">
-    <div id="register-search-map-text" style="width: 90%; margin-top: 50px">
+  <div class="col col-lg-8 p-0 m-0">
+    <div id="register-search-map-text" style="width: 90%; margin-top: 50px;position: relative;z-index: 1000;">
       <div
         class="input-group mb-3"
         style="
@@ -76,7 +76,7 @@
 
       padding: 20px;
     "
-    class="col col-3 pt-4"
+    class="col col-lg-3 pt-4"
   >
     <div *ngIf="!selectedSpot" style="color: gray; padding-top: 50%">
       <div style="text-align: center; font-size: xx-large">
@@ -101,7 +101,7 @@
         <div style="font-size: 1.1em">{{ selectedSpot.address }}</div>
       </div>
 
-      <form style="margin-top: 25px" [formGroup]="form">
+      <form style="margin-top: 25px" [formGroup]="formR">
         <div style="font-size: 1.5em; font-weight: bold">Spot details</div>
         <div style="color: gray; margin-bottom: 20px">
           <i
@@ -110,10 +110,10 @@
           >
         </div>
         <div>
-          <mat-checkbox [formControl]="hasTwoWheelers" style="font-size: 1.2em; font-weight: 500" (click)="changeTwoWheelers(!form.value.hasTwoWheelers)"
+          <mat-checkbox [formControl]="hasTwoWheelers" style="font-size: 1.2em; font-weight: 500" (click)="changeTwoWheelers(!formR.value.hasTwoWheelers)"
             >Can hold Two Wheelers</mat-checkbox
           >
-          <div *ngIf="form.value.hasTwoWheelers">
+          <div *ngIf="formR.value.hasTwoWheelers">
             <mat-form-field appearance="fill">
               <mat-label>Number of Slots</mat-label>
               <input formControlName="twoWheelerNum" matInput placeholder="Eg. 5" required/>
@@ -128,10 +128,10 @@
         </div>
 
         <div>
-          <mat-checkbox [formControl]="hasFourWheelers" style="font-size: 1.2em; font-weight: 500" (click)="changeFourWheelers(!form.value.hasFourWheelers)"
+          <mat-checkbox [formControl]="hasFourWheelers" style="font-size: 1.2em; font-weight: 500" (click)="changeFourWheelers(!formR.value.hasFourWheelers)"
             >Can hold Four Wheelers</mat-checkbox
           >
-          <div *ngIf="form.value.hasFourWheelers">
+          <div *ngIf="formR.value.hasFourWheelers">
             <mat-form-field appearance="fill">
               <mat-label>Number of Slots</mat-label>
               <input formControlName="fourWheelerNum" matInput placeholder="Eg. 5" required/>
@@ -145,7 +145,7 @@
           </div>
         </div>
       </form>
-      <button class="btn btn-success" [disabled]="form.invalid" (click)="confirmDialog()">Register Spot</button>
+      <button class="btn btn-success" [disabled]="formR.invalid" (click)="confirmDialog()">Register Spot</button>
     </div>
   </div>
 </div>

@@ -27,9 +27,10 @@ export class ActiveBookingDetailsComponent implements OnInit,OnDestroy {
           response.then((data)=>{
             console.log(data);
             this.booking=JSON.parse(JSON.stringify(data));
+            this.booking.cost=AppUtility.dateDifference(new Date(this.booking.fromtime),new Date(this.booking.totime))*parseInt(this.booking.cost);
             this.booking.fromtime=AppUtility.formatDate(new Date(this.booking.fromtime));
           this.booking.totime=AppUtility.formatDate(new Date(this.booking.totime));
-            
+          
           })
         });
 

@@ -46,7 +46,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegisterSpotComponent } from './register-spot/register-spot.component';
 import { BookingDetailsFormComponent } from './searchmap/booking-details-form/booking-details-form.component';
@@ -62,6 +62,9 @@ import { ActiveBookingDetailsComponent } from './active-booking-details/active-b
 import { QrPageComponent } from './qr-page/qr-page.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { RegisteredSpotDetailsComponent } from './registered-spot-details/registered-spot-details.component';
+import { PasswordRulesComponent } from './password-rules/password-rules.component';
+import { PreviousBookingDetailsComponent } from './previous-booking-details/previous-booking-details.component';
+import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 
 export function playerFactory() {
   return player;
@@ -105,13 +108,22 @@ export function playerFactory() {
     ActiveBookingDetailsComponent,
 
 
-    SignUpComponent,
+   
 
 
     QrPageComponent,
 
 
-    RegisteredSpotDetailsComponent
+    RegisteredSpotDetailsComponent,
+
+
+    PasswordRulesComponent,
+
+
+    PreviousBookingDetailsComponent,
+
+
+    ErrorNotFoundComponent
 
     
 
@@ -141,7 +153,8 @@ export function playerFactory() {
     MatNativeDateModule,
 
     MatMenuModule,
-    QRCodeModule
+    QRCodeModule,
+    MatCheckboxModule
 
   ],
   providers: [AppData],

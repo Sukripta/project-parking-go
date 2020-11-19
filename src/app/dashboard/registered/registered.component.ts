@@ -18,7 +18,7 @@ import { RegisteredSpotService } from 'src/app/services/registered-spot.service'
 })
 export class RegisteredComponent implements OnInit {
 
-  owner:string="sayantanbarik729@gmail.com";
+  owner=localStorage.getItem('email');
   spots:any[]=[];
   
   constructor(private database:DatabaseService,private registeredSpot:RegisteredSpotService) {

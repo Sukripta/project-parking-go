@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-navbar',
@@ -33,6 +34,12 @@ export class HelpComponent {
     type: new FormControl('',Validators.required),
     explain:new FormControl('',Validators.required)
   });
+  constructor(private database:DatabaseService){}
+  ping()
+  {
+    
+
+  }
 }
 
 @Component({

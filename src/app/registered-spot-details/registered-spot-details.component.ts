@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisteredSpotService } from '../services/registered-spot.service';
 
 @Component({
   selector: 'app-registered-spot-details',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisteredSpotDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private registeredSpot:RegisteredSpotService) { }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { RegisterFailDialogComponent } from '../register-fail-dialog/register-fail-dialog.component';
 import { RegisterSuccessDialogComponent } from '../register-success-dialog/register-success-dialog.component';
@@ -18,7 +19,8 @@ export class RegisterConfirmDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<RegisterConfirmDialogComponent>,
     @Inject(MAT_DIALOG_DATA) private data: any,
     private database: DatabaseService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -54,7 +56,15 @@ export class RegisterConfirmDialogComponent implements OnInit {
             dialogRefSuccess.afterClosed().subscribe(() => {
               
               let dialogRefId=this.dialog.open(SpotIdDialogComponent,{data:JSON.parse(JSON.stringify(data)),panelClass:'spot-id-dialog'});
-              this.dialogRef.close();
+              dialogRefId.afterClosed().subscribe(()=>{
+
+                this.dialogRef.close();
+                this.router.navigate(['dashboard']);
+
+
+
+              })
+              
             });
           } else {
             let dialogRefFail = this.dialog.open(RegisterFailDialogComponent, {

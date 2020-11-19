@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   array3;
   array4;
   c;
-  post = {"email":"12200116031s@gmail.com"}
+  post = {"email":localStorage.getItem('email')};
 
   vehicles = ["#","Car Type","Car Model","Car Number","#"]
   constructor(public http:HttpClient) { 

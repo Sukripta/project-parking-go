@@ -39,4 +39,11 @@ export class AppUtility
     return encrypted.toString();
 
   }
+
+  static dateDifference(date1,date2)
+  {
+    var diff =(date2.getTime() - date1.getTime()) / 1000;
+    diff /= (60 * 60);
+    return Math.abs(Math.round(diff));
+  }
 }

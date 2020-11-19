@@ -108,7 +108,7 @@ export function playerFactory() {
     ActiveBookingDetailsComponent,
 
 
-   
+
 
 
     QrPageComponent,

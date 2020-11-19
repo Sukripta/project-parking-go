@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -10,7 +11,7 @@ export class RouterComponent implements OnInit {
 
   imageUrl = "https://i.ibb.co/bzkxx2K/Logo-removebg-preview.png";
   
-  constructor(private spinner:NgxSpinnerService) { }
+  constructor(private spinner:NgxSpinnerService,private router:Router) { }
 
   ngOnInit(): void {
     this.spinner.show();
@@ -18,6 +19,12 @@ export class RouterComponent implements OnInit {
     setTimeout(() => {
       this.spinner.hide();
     },2500);
+  }
+
+  logout()
+  {
+    localStorage.removeItem('email');
+    
   }
 
 }

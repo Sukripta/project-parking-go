@@ -36,7 +36,7 @@ export class SearchmapComponent implements OnInit {
   totime: string;
   carNumber: string;
   carModel: string;
-  owner: string = '12200116031s@gmail.com';
+  owner=localStorage.getItem('email');
 
   oldData: string;
   newData: string;

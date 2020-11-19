@@ -48,9 +48,45 @@ export class DatabaseService {
   {
     return this.dataService.postData(`${this.appData.appData.databaseApi}getpreviousbookinglist.php`,booker);
 
+  
   }
+  getPreviousBooking(bookingId)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}getPreviousBooking.php`,bookingId);
+
+  }
+
+
   getRegisteredSpotList(owner)
   {
     return this.dataService.postData(`${this.appData.appData.databaseApi}getspotlistrenter.php`,owner);
   }
+
+  sendOtp(email)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}otpgenerate.php`,email);
+
+  }
+
+  verifyOtp(email)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}otpverify.php`,email);
+
+  }
+
+  registerUser(userData)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}insertuser.php`,userData);
+  }
+
+  signIn(userData)
+  {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}logincheck.php`,userData);
+  }
+
+  contactUs(query)
+  {
+
+  }
+
 }

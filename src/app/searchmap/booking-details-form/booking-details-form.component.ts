@@ -20,7 +20,7 @@ export class BookingDetailsFormComponent implements OnInit {
   timeNow: Date;
   form: FormGroup;
   vehicleDetails: FormGroup;
-  owner: string = '12200116031s@gmail.com';
+  owner=localStorage.getItem('email');
 
   enterVehicleDetails: boolean = false;
   selectedVehicle: boolean = false;

@@ -19,6 +19,9 @@ import { QrPageComponent } from './qr-page/qr-page.component';
 import { RegisterSpotComponent } from './register-spot/register-spot.component';
 import { BookingDetailsFormComponent } from './searchmap/booking-details-form/booking-details-form.component';
 import { SearchmapComponent } from './searchmap/searchmap.component';
+import { PreviousBookingDetailsComponent } from './previous-booking-details/previous-booking-details.component';
+import { RegisteredSpotDetailsComponent } from './registered-spot-details/registered-spot-details.component';
+import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 
 
 const routes: Routes = [
@@ -39,7 +42,10 @@ const routes: Routes = [
   {path:'dashboard/book-spots',component:BookingDetailsFormComponent},
   {path:'dashboard/book-spots/customer-map',component:SearchmapComponent},
   {path:'active-booking-details',component:ActiveBookingDetailsComponent},
-  {path:'active-booking-details/qr-page',component:QrPageComponent}
+  {path:'prev-booking-details',component:PreviousBookingDetailsComponent},
+ 
+  {path:'active-booking-details/qr-page',component:QrPageComponent},
+  {path:'**',component:ErrorNotFoundComponent}
 
 
 ];

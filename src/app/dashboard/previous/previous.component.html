@@ -1,7 +1,8 @@
 <app-loader></app-loader>
-
+<app-router></app-router>
 <div
   style="
+  position: absolute;top: 10%;width: 100%;
     background-image: url('assets/images/prevBookingBG.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -9,19 +10,19 @@
     background-repeat: no-repeat;
   "
 >
-  <div
+  <div class="w-100 row m-0 d-flex justify-content-center pt-5"
     style="
       background-color: rgba(0, 0, 0, 0.651);
       width: 100%;
-      min-height: calc(100vh);
+      min-height: calc(90vh);
       padding: 5% 0%;
     "
   >
-    <div class="px-5 mx-5">
+    <div class="col-12 col-lg-9">
       <div style="padding: 10px">
         <div
           *ngFor="let booking of bookings;let i=index"
-          class="my-5 p-5"
+          class="my-5 p-5 text-center text-lg-left"
           style="
             background-color: white;
             border-radius: 15px;
@@ -30,7 +31,7 @@
           "
           (click)="showDetails(i)"
         >
-          <div style="font-size: 3em" class="text-truncate">
+          <div style="font-size: 3em" class="text-wrap">
             <i
               class="fas fa-map-marked-alt"
               style="font-size: 0.5em; margin-right: 10px"

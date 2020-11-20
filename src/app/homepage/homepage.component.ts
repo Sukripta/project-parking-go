@@ -16,23 +16,24 @@ export class HomepageComponent implements OnInit {
   showNavigationArrows = true;
   showNavigationIndicators = true;
 
-  constructor(config: NgbCarouselConfig,private router:Router,public dialog:MatDialog) {
+  constructor(private config: NgbCarouselConfig,private router:Router,public dialog:MatDialog) {
 
  
 
-    config.showNavigationArrows = false;
-    config.showNavigationIndicators = false;
-    config.interval = 2000;
-    config.keyboard = true;
-    config.pauseOnHover = true;
-    if(localStorage.getItem('email'))
-    {
-      router.navigate(['dashboard']);
+    
+    // if(localStorage.getItem('email'))
+    // {
+    //   router.navigate(['dashboard']);
 
-    }
+    // }
   }
 
   ngOnInit(): void {
+    this.config.showNavigationArrows = false;
+    this.config.showNavigationIndicators = false;
+    this.config.interval = 2000;
+    this.config.keyboard = true;
+    this.config.pauseOnHover = true;
   }
 
   openAbout(){

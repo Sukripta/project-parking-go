@@ -80,7 +80,7 @@ export class SearchmapComponent implements OnInit {
           toDate.getSeconds()
         )}`;
       } else {
-        this.router.navigate(['']);
+        this.router.navigate(['dashboard/book-spots']);
       }
     });
   }

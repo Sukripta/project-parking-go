@@ -23,7 +23,8 @@ export class RouterComponent implements OnInit {
 
   logout()
   {
-    localStorage.removeItem('email');
+    localStorage.clear();
+    this.router.navigate(['']);
     
   }
 

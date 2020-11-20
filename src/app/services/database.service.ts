@@ -86,6 +86,7 @@ export class DatabaseService {
 
   contactUs(query)
   {
+    return this.dataService.postData(`${this.appData.appData.databaseApi}contactUs.php`,query);
 
   }
 

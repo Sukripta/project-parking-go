@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DatabaseService } from 'src/app/services/database.service';
 
@@ -34,10 +34,20 @@ export class HelpComponent {
     type: new FormControl('',Validators.required),
     explain:new FormControl('',Validators.required)
   });
-  constructor(private database:DatabaseService){}
+  constructor(private database:DatabaseService,public dialogRef: MatDialogRef<HelpComponent>){}
   ping()
   {
+    console.log(this.form.value);
     
+    this.database.contactUs({"topic":this.form.value.type,"issue":this.form.value.explain,"email":localStorage.getItem('email')}).subscribe((response)=>{
+      response.then((data)=>{
+        console.log(data);
+        
+        if(data.Status)
+        this.dialogRef.close();
+
+      })
+    })
 
   }
 }

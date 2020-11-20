@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ActiveBookingService } from 'src/app/services/active-booking.service';
 import { BookingService } from 'src/app/services/booking.service';
 import { DatabaseService } from 'src/app/services/database.service';
+import { AppUtility } from 'src/app/utility/utility';
 import { BookingFailedDialogComponent } from '../booking-failed-dialog/booking-failed-dialog.component';
 import { BookingSuccessDialogComponent } from '../booking-success-dialog/booking-success-dialog.component';
 
@@ -17,12 +18,19 @@ export class ConfirmBookingDialogComponent implements OnInit {
 
   _data;
   booking;
+  fromDate;
+  toDate;
+  cost;
   constructor(
     public dialogRef: MatDialogRef<ConfirmBookingDialogComponent>,
     @Inject(MAT_DIALOG_DATA) private data: any,private database:DatabaseService,private dialog:MatDialog,private bookingService:BookingService,private router:Router,private activeBooking:ActiveBookingService) {}
 
   ngOnInit(): void {
     this._data=this.data;
+    this.fromDate=AppUtility.formatDate(new Date(this._data.from));
+    this.toDate=AppUtility.formatDate(new Date(this._data.to));
+    this.cost=AppUtility.dateDifference(new Date(this._data.from),new Date(this._data.to))*parseInt(this._data.cost);
+
     //console.log(this._data);
     
 

@@ -11,7 +11,7 @@ import { AppUtility } from 'src/app/utility/utility';
 })
 export class ActiveComponent implements OnInit {
   bookings:any[];
-  owner="12200116031s@gmail.com";
+  owner=localStorage.getItem('email');
 
   constructor(private database:DatabaseService,private activeBooking:ActiveBookingService,private router:Router) {
     this.bookings=[];

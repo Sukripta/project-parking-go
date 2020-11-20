@@ -24,7 +24,7 @@
             <img src="https://sukripta.github.io/parking-go/assets/images/Image-1.jpeg">
             <div class="hidden">
                 <p id="one">There are parking spaces scattered across any city, but are difficult to find when you need them on the go.</p><br>
-                <button class="btn-link">About Us&nbsp;<i class="fa fa-play" aria-hidden="true"></i></button>
+                <button class="btn-link" (click)="openAbout()">About Us&nbsp;<i class="fa fa-play" aria-hidden="true"></i></button>
             </div>
 
         </div>
@@ -32,7 +32,7 @@
             <img src="https://sukripta.github.io/parking-go/assets/images/Image-3.jpeg">
             <div class="hidden">
                 <p id="two">Parking Go makes the job easy for you, by allowing you to book spots directly from your phone.</p><br>
-                <button class="btn-diff">Worldwide&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></button>
+                <button class="btn-diff" (click)="openWorldwide()">Worldwide&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></button>
             </div>
 
         </div>
@@ -40,7 +40,7 @@
             <img src="https://sukripta.github.io/parking-go/assets/images/Image-2.jpeg">
             <div class="hidden">
                 <p id="three">You can also register slots owned by you, to be used by those in need of parking.</p><br>
-                <button class="btn-out">News&nbsp;<i class="fa fa-external-link-square" aria-hidden="true"></i></button>
+                <a routerLink="/signin"><button class="btn-out">Search for Parking&nbsp;<i class="fa fa-search" aria-hidden="true"></i></button></a>
             </div>
 
         </div>
@@ -48,15 +48,15 @@
     <div class="hidden-content">
         <div class="hidden-one">
             <p id="hidden-one">There are parking spaces scattered across any city, but are difficult to find when you need them on the go.</p><br>
-                <button class="btn-hidden">About Us&nbsp;<i class="fa fa-play" aria-hidden="true"></i></button>
+                <button class="btn-hidden" (click)="openAbout()">About Us&nbsp;<i class="fa fa-play" aria-hidden="true"></i></button>
         </div>
         <div class="hidden-two">
             <p id="hidden-one">Parking Go makes the job easy for you, by allowing you to book spots directly from your phone.</p><br>
-                <button class="btn-hidden">Worldwide&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></button>
+                <button class="btn-hidden" (click)="openWorldwide()">Worldwide&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></button>
         </div>
         <div class="hidden-three">
             <p id="hidden-one">You can also register slots owned by you, to be used by those in need of parking.</p><br>
-                <button class="btn-hidden">News&nbsp;<i class="fa fa-external-link-square" aria-hidden="true"></i></button>
+            <a routerLink="/signin"><button class="btn-hidden">Search for Parking&nbsp;<i class="fa fa-search" aria-hidden="true"></i></button></a>
         </div>
     </div>
     <div class="footer">
@@ -353,7 +353,7 @@
            padding: 2%;
            font-size: 4.5vw;
            border-radius: 20px;
-           width: 35%;
+           width: 40%;
 
        }
        

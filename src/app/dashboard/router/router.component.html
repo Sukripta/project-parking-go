@@ -10,7 +10,7 @@
             <a routerLinkActive="active" routerLink="/dashboard/active"><li>Active Booking&nbsp;<i class="fa fa-check-circle" aria-hidden="true"></i></li></a>
             <a routerLinkActive="active" routerLink="/dashboard/previous"><li>Previous Booking&nbsp;<i class="fa fa-list-alt" aria-hidden="true"></i></li></a>
             <a routerLinkActive="active" routerLink="/dashboard/registered"><li>Registered Spots&nbsp;<i class="fa fa-bookmark" aria-hidden="true"></i></li></a>
-            <a routerLink="/homepage"><li id="logout">Log Out&nbsp;<i class="fas fa-sign-out-alt" aria-hidden="true"></i></li></a>
+            <a style="cursor: pointer;"  (click)="logout()"><li id="logout">Log Out&nbsp;<i class="fas fa-sign-out-alt" aria-hidden="true"></i></li></a>
 
         </ul>
     </div>
@@ -29,8 +29,10 @@
             <a class="links" mat-menu-item routerLinkActive="active" routerLink="/dashboard/registered">
                 <i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;Registered Spots
             </a>
-            <a class="links" mat-menu-item routerLink="/homepage">
+
+            <a class="links" mat-menu-item style="cursor: pointer;" (click)="logout()">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log Out
+
             </a>
         </mat-menu>
 

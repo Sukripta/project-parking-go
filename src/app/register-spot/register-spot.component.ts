@@ -25,9 +25,9 @@ export class RegisterSpotComponent implements OnInit {
   selectedSpot: any;
 
   
-  owner:string="sayantanbarik729@gmail.com";
+  owner=localStorage.getItem('email');
 
-  form:FormGroup;
+  formR:FormGroup;
 
   constructor(
     private searchService: SearchServiceService,
@@ -47,7 +47,7 @@ export class RegisterSpotComponent implements OnInit {
     });
     this.initMap();
 
-    this.form=new FormGroup({
+    this.formR=new FormGroup({
       hasTwoWheelers:new FormControl(false,[]),
         hasFourWheelers:new FormControl(false,[]),
         
@@ -62,12 +62,12 @@ export class RegisterSpotComponent implements OnInit {
 
   get hasTwoWheelers()
   {
-    return this.form.get("hasTwoWheelers");
+    return this.formR.get("hasTwoWheelers");
   }
 
   get hasFourWheelers()
   {
-    return this.form.get("hasFourWheelers");
+    return this.formR.get("hasFourWheelers");
   }
 
   initMap(): void {
@@ -148,13 +148,13 @@ export class RegisterSpotComponent implements OnInit {
   {
     if(hasFourWheeler)
     {
-      this.form.addControl("fourWheelerNum",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
-      this.form.addControl("fourWheelerCost",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
+      this.formR.addControl("fourWheelerNum",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
+      this.formR.addControl("fourWheelerCost",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
     }
     else
     {
-      this.form.removeControl("fourWheelerNum");
-      this.form.removeControl("fourWheelerCost");
+      this.formR.removeControl("fourWheelerNum");
+      this.formR.removeControl("fourWheelerCost");
     }
   }
 
@@ -162,22 +162,22 @@ export class RegisterSpotComponent implements OnInit {
   {
     if(hasTwoWheeler)
     {
-      this.form.addControl("twoWheelerNum",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
-      this.form.addControl("twoWheelerCost",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
+      this.formR.addControl("twoWheelerNum",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
+      this.formR.addControl("twoWheelerCost",new FormControl('',[CommonValidators.fieldRequired,NumValidators.checkFormat]));
     }
     else
     {
-      this.form.removeControl("twoWheelerNum");
-      this.form.removeControl("twoWheelerCost");
+      this.formR.removeControl("twoWheelerNum");
+      this.formR.removeControl("twoWheelerCost");
     }
   }
 
   confirmDialog()
   {
-    this.selectedSpot["twoWheelerNum"]=this.form.value["twoWheelerNum"];
-    this.selectedSpot["twoWheelerCost"]=this.form.value["twoWheelerCost"];
-    this.selectedSpot["fourWheelerNum"]=this.form.value["fourWheelerNum"];
-    this.selectedSpot["fourWheelerCost"]=this.form.value["fourWheelerCost"];
+    this.selectedSpot["twoWheelerNum"]=this.formR.value["twoWheelerNum"];
+    this.selectedSpot["twoWheelerCost"]=this.formR.value["twoWheelerCost"];
+    this.selectedSpot["fourWheelerNum"]=this.formR.value["fourWheelerNum"];
+    this.selectedSpot["fourWheelerCost"]=this.formR.value["fourWheelerCost"];
     this.selectedSpot["owner"]=this.owner;
 
     let dialogRef=this.dialog.open(RegisterConfirmDialogComponent,{data:JSON.parse(JSON.stringify(this.selectedSpot))});

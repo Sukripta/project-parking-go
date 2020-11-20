@@ -1,10 +1,16 @@
 <app-loader></app-loader>
-<div class="bg-img pt-5">
+<div class="pt-5" style="background-image: url('assets/images/Form_background.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+min-height: calc(100vh);
+margin: 0;">
     <form [formGroup]="form" (ngSubmit)="signup()">
 
         <h2>Sign Up</h2>
         
-        <div class="alert alert-danger" *ngIf="form.errors">The username and password is invalid</div>
+       
         <div class="form-group">
             <label for="FirstName">
                 First Name<span> *</span>
@@ -26,28 +32,64 @@
                 <div *ngIf="LastName.errors.cannotContainSpace" class="alert alert-danger">Last Name cannot contain space</div>
             </div>
         </div>
-    
-        <div class="form-group">
-            <label for="email">
-                Email<span> *</span>
-            </label>
-            <input type="email" class="form-control" id="email" formControlName="email" />
-            <div *ngIf="(email.invalid && email.touched) || email.dirty">
-                <div *ngIf="email.errors?.required" class="alert alert-danger">Email is required</div>
-                <div *ngIf="email.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div>
-              </div>
-        </div>
-    
+
         <div class="form-group">
             <label for="phnNumber">
                 Phone Number<span> *</span>
             </label>
-            <input type="number" class="form-control" id="phnNumber" formControlName="phnNumber" />
+            <input type="text" class="form-control" id="phnNumber" formControlName="phnNumber" />
             <div *ngIf="phnNumber.touched && phnNumber.invalid">
                 <div *ngIf="phnNumber.errors.required" class="alert alert-danger">Phone Number required</div>
                 <div *ngIf="phnNumber.errors.pattern" class="alert alert-danger">Please, Enter 10 digit Phone Number</div>
             </div>
         </div>
+    
+        <div class="form-group">
+            <label for="email">
+                Email<span> *</span>
+            </label>
+            <input type="email" class="form-control" id="email" formControlName="email" (change)="alreadyExists=false" [attr.disabled]="otpOk?'':null"/>
+            <div *ngIf="(email.invalid && email.touched) || email.dirty">
+                <div *ngIf="email.errors?.required" class="alert alert-danger">Email is required</div>
+                <div *ngIf="email.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div>
+              </div>
+              <button class="btn btn-secondary mt-2" *ngIf="email.valid && !otpSent && !otpClicked" (click)="sendOtp()">Get OTP</button>
+              <button class="btn btn-secondary mt-2" *ngIf="email.valid && otpSent && !otpClicked" (click)="sendOtp()">Resend OTP</button>
+        </div>
+
+        <div *ngIf="alreadyExists" style="font-weight: bold; color: dodgerblue;">This email is already registered. Please try signing in instead.</div>
+
+        <div class="form-group" *ngIf="otpSent && !otpClicked">
+            <label for="otp">
+                Enter OTP
+            </label>
+            <input type="text" class="form-control" id="otp"  formControlName="otp"/>
+           
+              <button class="btn btn-secondary mt-2" *ngIf="otp.touched && otp.valid" (click)="verifyOtp()">Verify</button>
+        </div>
+
+        <div class="mb-3" style="font-weight: bold; color: red;" *ngIf="verifyClicked && !otpOk">OTP does not match</div>
+
+        <div *ngIf="otpOk">
+            <div class="mb-3" style="font-weight: bold; color: dodgerblue;">OTP Verified</div>
+
+            <div class="form-group">
+                <label for="password">
+                    Password<span> *</span>
+                </label>
+                <input type="password" class="form-control" id="password" formControlName="password"/>
+                <div style="color: grey;font-style: italic;cursor: pointer;" (click)="passwordRules()">Click to know about the password rules</div>
+                <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Password not proper</div>
+                
+                 
+            </div>
+
+            
+
+
+        </div>
+    
+        
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
     
         <button type="submit" class="btn btn-outline-primary mb-2" [disabled]="!form.valid">Register</button>
